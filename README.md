@@ -18,17 +18,14 @@ QistRisk AI evaluates applicant creditworthiness using machine learning models t
 * **Data Processing:** Pandas, NumPy
 
 ## 📦 How to Run Locally
-
 1. Clone the repository:
-   ```bash
-   git clone [https://github.com/sadaf144/qistrisk-credit-ai.git](https://github.com/sadaf144/qistrisk-credit-ai.git)
-   cd qistrisk-credit-ai
-3. Install dependencies:
-   ```Bash
-pip install -r requirements.txt
-4. Launch the app:
-   ```Bash
-streamlit run app.py
+    ```bash
+     git clone [https://github.com/sadaf144/qistrisk-credit-ai.git](https://github.com/sadaf144/qistrisk-credit-ai.git)
+     cd qistrisk-credit-ai
+2. 
+   
+ 
+    
 
    git clone [https://github.com/sadaf144/qistrisk-credit-ai.git](https://github.com/sadaf144/qistrisk-credit-ai.git)
    cd qistrisk-credit-ai
