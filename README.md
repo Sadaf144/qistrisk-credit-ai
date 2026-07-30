@@ -24,11 +24,10 @@ QistRisk AI evaluates applicant creditworthiness using machine learning models t
    git clone [https://github.com/sadaf144/qistrisk-credit-ai.git](https://github.com/sadaf144/qistrisk-credit-ai.git)
    cd qistrisk-credit-ai
 3. Install dependencies:
-
-```Bash
+   ```Bash
 pip install -r requirements.txt
-Launch the app:
-```Bash
+4. Launch the app:
+   ```Bash
 streamlit run app.py
 
    git clone [https://github.com/sadaf144/qistrisk-credit-ai.git](https://github.com/sadaf144/qistrisk-credit-ai.git)
