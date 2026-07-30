@@ -1,4 +1,3 @@
-app_code = """
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -9,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 st.set_page_config(page_title="QistRisk AI - Credit Evaluation", layout="wide")
 
 # Custom Dark Neon UI CSS
-st.markdown(\"\"\"
+st.markdown("""
 <style>
     /* Dark Theme Setup */
     .stApp {
@@ -110,7 +109,7 @@ st.markdown(\"\"\"
         font-size: 13px;
     }
 </style>
-\"\"\", unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # Train ML Model
 @st.cache_data
@@ -190,12 +189,12 @@ with left_col:
         color = "#10B981" if prediction == 1 else "#EF4444"
         conf_val = approval_prob if prediction == 1 else rejection_prob
         
-        st.markdown(f\"\"\"
+        st.markdown(f"""
         <div class='confidence-circle' style='border-color: {color};'>
             <span style='font-size: 26px; font-weight: bold; color: #FFFFFF;'>{conf_val:.0f}%</span>
             <span style='font-size: 9px; color: #64748B; letter-spacing: 1px;'>CONFIDENCE</span>
         </div>
-        \"\"\", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
         
     with hero_col2:
         if prediction == 1:
@@ -213,7 +212,7 @@ with left_col:
     with m1:
         badge = "badge-green" if credit_score >= 680 else "badge-red"
         status = "Low Risk" if credit_score >= 720 else ("Moderate" if credit_score >= 650 else "High Risk")
-        st.markdown(f\"\"\"
+        st.markdown(f"""
         <div class='dark-card'>
             <div style='display:flex; justify-content:space-between; align-items:center;'>
                 <span style='color: #94A3B8; font-size: 12px;'>eCIB History</span>
@@ -221,12 +220,12 @@ with left_col:
             </div>
             <h3 style='color: #FFFFFF; margin-top: 10px;'>{credit_score} <span style='font-size:12px; color:#94A3B8;'>SBP Score</span></h3>
         </div>
-        \"\"\", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
     with m2:
         badge = "badge-green" if dti_ratio <= 35 else "badge-red"
         status = "Optimized" if dti_ratio <= 35 else "Elevated DTI"
-        st.markdown(f\"\"\"
+        st.markdown(f"""
         <div class='dark-card'>
             <div style='display:flex; justify-content:space-between; align-items:center;'>
                 <span style='color: #94A3B8; font-size: 12px;'>Debt-to-Income</span>
@@ -234,10 +233,10 @@ with left_col:
             </div>
             <h3 style='color: #FFFFFF; margin-top: 10px;'>{dti_ratio:.1f}% <span style='font-size:12px; color:#94A3B8;'>Monthly Ratio</span></h3>
         </div>
-        \"\"\", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
     with m3:
-        st.markdown(f\"\"\"
+        st.markdown(f"""
         <div class='dark-card'>
             <div style='display:flex; justify-content:space-between; align-items:center;'>
                 <span style='color: #94A3B8; font-size: 12px;'>Biometric Verification</span>
@@ -245,22 +244,22 @@ with left_col:
             </div>
             <h3 style='color: #FFFFFF; margin-top: 10px;'>100% <span style='font-size:12px; color:#94A3B8;'>CNIC Match</span></h3>
         </div>
-        \"\"\", unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
 with right_col:
     # FINANCIAL PORTFOLIO SIDE CARD
-    st.markdown(f\"\"\"
+    st.markdown(f"""
     <div class='dark-card'>
         <h4 style='color: #FFFFFF;'>Applicant Financials</h4>
         <div style='display:flex; justify-content:space-between; margin-top:15px;'>
             <span style='color:#94A3B8;'>Monthly Income</span>
             <span style='color:#FFFFFF; font-weight:bold; margin-left:auto;'>PKR {income:,.0f}</span>
         </div>
-        <div style='display:flex; justify-style:space-between; margin-top:10px;'>
+        <div style='display:flex; justify-content:space-between; margin-top:10px;'>
             <span style='color:#94A3B8;'>Monthly Debt</span>
             <span style='color:#FFFFFF; font-weight:bold; margin-left:auto;'>PKR {existing_debts:,.0f}</span>
         </div>
-        <div style='display:flex; justify-style:space-between; margin-top:10px;'>
+        <div style='display:flex; justify-content:space-between; margin-top:10px;'>
             <span style='color:#94A3B8;'>Experience</span>
             <span style='color:#FFFFFF; font-weight:bold; margin-left:auto;'>{employment_years} Years</span>
         </div>
@@ -270,19 +269,13 @@ with right_col:
             "Applicant demonstrates stable cash flow indicators and low default probability across micro-financing parameters."
         </div>
     </div>
-    \"\"\", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
     # EVIDENCE ARTIFACTS
-    st.markdown(\"\"\"
+    st.markdown("""
     <div class='dark-card'>
         <p style='color:#94A3B8; font-size:12px;'>📂 Verification Documents</p>
         <p style='color:#34D399; font-size:13px; margin:5px 0;'>✓ NADRA_Verisys_Bio.pdf (Verified)</p>
         <p style='color:#34D399; font-size:13px; margin:5px 0;'>✓ Bank_Statement_6M.pdf (Auto-Parsed)</p>
     </div>
-    \"\"\", unsafe_allow_html=True)
-"""
-
-with open("app.py", "w") as f:
-    f.write(app_code)
-
-print("✅ app.py updated with '🇵🇰 QistRisk AI'!")
+    """, unsafe_allow_html=True)
